@@ -13,6 +13,7 @@ body {
   font-family: 'Open Sans', sans-serif;
   font-size: 1rem;
   text-align: center;
+  position: relative;
 }
 
 header, main, footer {
@@ -33,17 +34,6 @@ img {
   width: 100%;
 }
 
-/* .main-btn {
-  padding: 0.3em 1em;
-  border: 1px solid hsl(322, 100%, 66%);
-  border-radius: 0.3em;
-  color: hsl(322, 100%, 66%);
-  box-shadow: 0 0 0.5em -0.2em hsl(322, 100%, 66%);
-}
- */
-
-
-
 
 /************* header style *******************/
 
@@ -56,8 +46,7 @@ header {
 }
 
 .header-logo {
-  min-width: 10rem;
-  max-width: 10rem;
+  width: 10em;
 }
 
 .header-btn {
@@ -74,7 +63,6 @@ header {
   color: #fff;
   background-color: hsl(322, 100%, 66%);
   box-shadow: 0 0 1em -0.2em rgba(0,0,0,0.2);
-  margin-top: 1em;
   display: inline-block;
   width: 200px;
 }
@@ -84,36 +72,32 @@ main p {
   color: hsl(208, 11%, 55%);
 }
 
-/* top-container */
 .top-container{
   padding: 16% 2em 2em;
-}
-
-.top-container > * {
-  margin-left:  auto;
-  margin-right:  auto;
-
+  margin: 0 auto;
 }
 
 .main-head {
   max-width: 260px;
-  display: block;
+  display: inline-block;
 }
 
-p.main-contents {
+.main-contents {
   font-size: 1.4em;
   max-width: 430px;
+  display: inline-block;
 }
 
-.main-btn {
+
+.btn-wrap{
   display: none;
+  margin: 2em;
 }
 
 .main-img {
+  width: 100%;
   margin: 10% 0;
 }
-
-/* mid-container */
 
 .mid-container {
   margin: -2em -2em 0;
@@ -153,11 +137,11 @@ p.main-contents {
 
 /************* footer *******************/
 footer {
-  /* margin: 0 -2em; */
   background-color: hsl(192, 100%, 9%);
   color: #fff;
   text-align: left;
 }
+
 
 .subscribe {
   text-align: left;
@@ -238,4 +222,142 @@ ul.menu-list {
 .attribution {
   font-size: 0.5em;
   text-align: center;
+}
+
+.footer-bg {
+  background-image: url("../images/bg-footer-mobile.png");
+  background-repeat: no-repeat;
+  background-size: cover;
+  width: 100%;
+  height: 70px;
+  position: absolute;
+  bottom: 0;
+}
+
+
+/************* media queries *******************/
+
+@media screen and (min-width: 520px) {
+  .main-head {
+    max-width: none;
+  }
+
+  .btn {
+    width: 280px;
+  }
+
+  .btn-wrap {
+    display: inline-block;
+  }
+
+  .main-contents {
+    display: block;
+    margin: 0 auto;
+    max-width: 660px;
+  }
+}
+
+@media screen and (min-width: 992px) {
+  html {
+  font-size: calc(62.5% * 2);
+  }
+
+  h1 {
+    font-weight: bold;
+  }
+
+  header {
+    padding: 3em;
+  }
+
+  .header-btn {
+    padding: 0.6em 1em;
+    width: 10em;
+  }
+
+  .top-container {
+    padding: 6% 6em 6em;
+  }
+
+  .btn {
+    width: 400px;
+  }
+
+  .main-img {
+    margin: 0 auto;
+  }
+
+  .mid-container {
+    display: flex;
+    flex-direction: row-reverse;
+    align-items: center;
+  }
+
+  .feature-img {
+    padding: 0 3em 0 0;
+    flex-basis: 50%;
+  }
+
+  .feature-contents {
+    flex-basis: 50%;
+  }
+
+  .feature-contents p {
+    font-size: 1em;
+  }
+
+  .features {
+    margin: 2em 0;
+  }
+
+  footer {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: flex-start;
+  }
+
+  .footer-logo-wrap {
+    order: 1;
+    flex-basis: 100%;
+    }
+
+  .subscribe-flex {
+    order: 4;
+    flex-basis: calc(100% / 3);
+  }
+
+  .subscribe {
+    margin-top: 0;
+  }
+
+  .sns-wrap {
+    order: 2;
+    flex-basis: calc(100% / 3);
+    padding-right: 4%;
+  }
+
+  ul.menu-list {
+    order: 3;
+    margin: 0;
+    flex: 1 0 calc( 100% /6 );
+  }
+
+  .menu-link {
+    font-size: 1.1em;
+  }
+
+  .copyright {
+    order: 5;
+    flex-basis: 100%;
+  }
+
+  footer {
+    padding: 4em 6em;
+  }
+
+  .footer-bg {
+    background-image: url("../images/bg-footer-desktop.png");
+    height: 70px;
+  }
+
 }
